@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nyc-taxi-pipeline"
+version = "0.1.0"
+description = "Ingestion, transformation (bronze/silver/gold), and orchestration pipeline for NYC taxi trip data."
+readme = "README.md"
+requires-python = ">=3.10,<3.12"
+license = { text = "MIT" }
+
+dependencies = [
+    "pyspark==3.5.1",
+    "delta-spark==3.2.0",
+    "boto3==1.34.144",
+    "botocore==1.34.144",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==8.2.2",
+    "pytest-mock==3.14.0",
+    "black==24.4.2",
+    "ruff==0.5.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["ingestion*", "transformation*", "orchestration*"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
