@@ -86,3 +86,6 @@ data/silver/
 data/gold/
 *.csv
 *.log
+
+# ---- Assistant ----
+CLAUDE.md
