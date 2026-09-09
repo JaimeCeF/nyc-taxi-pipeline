@@ -1,0 +1,15 @@
+services:
+  localstack:
+    image: localstack/localstack:3
+    container_name: nyc-taxi-localstack
+    ports:
+      - "4566:4566"
+    environment:
+      - SERVICES=s3
+      - DEFAULT_REGION=us-east-2
+      - PERSISTENCE=1
+    volumes:
+      - localstack-data:/var/lib/localstack
+
+volumes:
+  localstack-data:
