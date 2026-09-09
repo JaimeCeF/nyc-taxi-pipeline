@@ -7,7 +7,7 @@ name = "nyc-taxi-pipeline"
 version = "0.1.0"
 description = "Ingestion, transformation (bronze/silver/gold), and orchestration pipeline for NYC taxi trip data."
 readme = "README.md"
-requires-python = ">=3.10,<3.12"
+requires-python = ">=3.10,<3.13"
 license = { text = "MIT" }
 
 dependencies = [
